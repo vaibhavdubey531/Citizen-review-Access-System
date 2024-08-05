@@ -1,14 +1,68 @@
-.loginbox{
-    width: 50vw;
-    margin: auto;
-    border: 2px solid rebeccapurple;
-    padding: 10px;
-}
-
-form{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    height: 100vh;
+    margin: 0;
+}
+
+.loginbox {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginbox h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.loginbox form {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginbox label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.loginbox input[type="text"],
+.loginbox input[type="password"] {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.loginbox input[type="submit"] {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.loginbox input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.loginbox .message {
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}
+
+h3{
+    text-align: center;
 }

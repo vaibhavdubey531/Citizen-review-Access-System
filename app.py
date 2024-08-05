@@ -4,6 +4,9 @@ import pandas as pd
 from io import BytesIO
 import os
 
+# for passwords
+from credentials import user_and_passwords
+
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -113,26 +116,30 @@ def citizen_review_form():
 # login form
 @app.route("/login",methods=['GET', 'POST'])
 def login_form():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    if "username" not in session:
+        if request.method == 'POST':
+            username = request.form['username']
+            password = request.form['password']
 
-        # Replace with your actual authentication logic
-        if username == 'admin' and password == 'password':
-            session['username'] = username
-            # Example: Redirect to a dashboard or home page
-            return redirect("/get_data")
-        else:
-            # Example: Display error message or redirect to login page\
-            data="Try again with correct credentials!!"
-            return render_template('login.html',data=data)
+            # Replace with your actual authentication logic
+            if username in user_and_passwords and user_and_passwords[username] == password:
+                session['username'] = username
+                # Example: Redirect to a dashboard or home page
+                return redirect("/get_data")
+            else:
+                # Example: Display error message or redirect to login page\
+                data="Try again with correct credentials!!"
+                return render_template('login.html',data=data)
+    else:
+        # return render_template("data.html")
+        return redirect("/get_data")
 
     # If GET request or login failed, render the login form
     return render_template('login.html')
 
 @app.route("/logout")
 def logout():
-    session.pop("username")
+    session.pop("username",None)
     return redirect("/")
 
 # app.run(debug=True)
