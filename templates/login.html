@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static\login.css">
+</head>
+
+<body>
+    <div class="loginbox">
+        <form action="/login" method="post">
+            {{data}}
+            <label for="username">Enter Username</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <label for="password">Enter Password</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <!-- <a href="/login"><input type="button" value="Sign in"></a> -->
+             <input type="submit" value="Sign In">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Data</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        #navbar{
+            border-radius: 10px;
+            /* background-color: rgba(255, 255, 255, 0.5); */
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #box2 {
+            /* display: flex; */
+            /* justify-content: flex-start; */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="/"><button>Main Page</button></a>
+        <a href="/logout"><button>Logout</button></a>
+        <!-- <button><a href="/">Main Page</a></button>
+        <button><a href="/logout">Logout</a></button> -->
+    </nav>
+
+    <h2>Collected Reviews</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Citizen ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Scheme</th>
+            <th>Review</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/delete_data"><button>Delete All Records</button></a>
+    <a href="/download_excel"><button>Download Excel</button></a>
+    <a href="#"><button onclick="printTable()">Print Table</button></a>
+
+
+    <script>
+        function printTable() {
+            window.print();
+        }
+    </script>
+
+</body>
+
+</html>

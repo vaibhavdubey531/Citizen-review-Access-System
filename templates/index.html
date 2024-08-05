@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Review Form</title>
+    <link rel="shortcut icon"
+        href="https://tse4.mm.bing.net/th/id/OIP.SKb5MW7RePFO-EgaSmvFXQHaHw?w=161&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+        type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <!-- <div id="logo">
+        <img id="logoimg" src="https://tse4.mm.bing.net/th/id/OIP.SKb5MW7RePFO-EgaSmvFXQHaHw?w=161&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Telangaana Government">
+
+    </div> -->
+    <h1>Citizen Feedback</h1>
+    <form action="/" method="post" id="citizenReviewForm">
+        <label for="citizenId">Citizen ID:</label>
+        <input type="text" id="citizenId" name="citizenId" required>
+
+        <label for="citizenName">Name:</label>
+        <input type="text" id="citizenName" name="citizenName" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="schemes">Choose a Scheme:</label>
+        <select id="schemes" name="schemes" required>
+            <option value="Mahalakshmi">Mahalakshmi</option>
+            <option value="Rythu Bandhu">Rythu Bandhu</option>
+            <option value="Indiramma House">Indiramma House</option>
+            <option value="Arogyasri">Arogyasri</option>
+            <option value="Cheyutha Scheme">Cheyutha Scheme</option>
+        </select>
+
+        <label for="review">Review on the Scheme:</label>
+        <textarea id="review" name="review" required></textarea>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        <a href="/login"><input id="readbutton" type="button" value="Show the Data"></a>
+    </form>
+</body>
+
+</html>
