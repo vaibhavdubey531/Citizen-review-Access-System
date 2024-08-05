@@ -83,6 +83,18 @@
             display: flex;
             justify-content: flex-start;
         } */
+
+        h3{
+            color: black;
+            font-weight: bold;
+            font-size: 50px;
+            text-align: center;
+            background-color: white;
+            margin: 30px auto;
+
+            width: 50vw;
+            border-radius: 10px;
+        }
         
     </style>
 </head>
@@ -117,7 +129,7 @@
         </tr>
         {% endfor %}
     </table>
-
+    <h3>{{info}}</h3>
     <a href="/delete_data"><button>Delete All Records</button></a>
     <a href="/download_excel"><button>Download Excel</button></a>
     <a href="#"><button onclick="printTable()">Print Table</button></a>

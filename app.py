@@ -50,7 +50,9 @@ def delete_data():
         connection.commit()
         cursor.close()
 
-        return "<h1>Records are deleted successfully</h1>"
+        # return "<h1>Records are deleted successfully</h1>"
+        info="Records are deleted!!"
+        return render_template("data.html",info=info)
     else:
         return redirect("/login")
 
