@@ -52,12 +52,17 @@ input[type="submit"],input[type="reset"],#readbutton:hover {
 }
 
 /* Additional styling for better readability */
-h1 {
+h1,h2 {
     text-align: center;
     color: white;
     font-weight: bold;
     background-color: red;
     border-radius: 15px;
+}
+
+h2{
+    background-color: white;
+    color: black;
 }
 
 p {
